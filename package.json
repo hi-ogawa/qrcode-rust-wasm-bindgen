@@ -1,6 +1,6 @@
 {
 	"name": "@hiogawa/qrcode-rust-wasm-bindgen",
-	"version": "0.0.0",
+	"version": "0.0.1",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/hi-ogawa/qrcode-rust-wasm-bindgen"
@@ -14,17 +14,19 @@
 		},
 		"./pkg": {
 			"import": "./pkg/index.js",
-			"types": "./pk/index.d.ts"
+			"types": "./pkg/index.d.ts"
 		},
 		"./pkg/index_bg.wasm": {
 			"import": "./pkg/index_bg.wasm"
 		}
 	},
-	"main": "./dist/bundle.js",
-	"types": "./dist/bundle.d.ts",
+	"main": "./dist/index.js",
+	"types": "./dist/index.d.ts",
+	"bin": "./bin/cli.js",
 	"files": [
-		"pkg/*",
-		"dist/*"
+		"bin",
+		"pkg",
+		"dist"
 	],
 	"scripts": {
 		"clean": "rm -rf pkg dist",
@@ -50,6 +52,7 @@
 		"@hiogawa/isort-ts": "1.1.2-pre.0",
 		"@hiogawa/utils": "1.6.1-pre.9",
 		"@tsconfig/strictest": "^2.0.2",
+		"@types/node": "^20.8.10",
 		"prettier": "^3.0.3",
 		"tsup": "^7.2.0",
 		"typescript": "^5.2.2",
