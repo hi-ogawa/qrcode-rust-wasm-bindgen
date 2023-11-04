@@ -14,14 +14,14 @@
 		},
 		"./pkg": {
 			"import": "./pkg/index.js",
-			"types": "./pk/index.d.ts"
+			"types": "./pkg/index.d.ts"
 		},
 		"./pkg/index_bg.wasm": {
 			"import": "./pkg/index_bg.wasm"
 		}
 	},
-	"main": "./dist/bundle.js",
-	"types": "./dist/bundle.d.ts",
+	"main": "./dist/index.js",
+	"types": "./dist/index.d.ts",
 	"files": [
 		"pkg/*",
 		"dist/*"
