@@ -1,0 +1,11 @@
+[package]
+name = "qrcode_wasm_bindgen"
+version = "0.0.0"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+wasm-bindgen = { version = "0.2.87" }
+qrcode = { version = "0.11", default-features = false }

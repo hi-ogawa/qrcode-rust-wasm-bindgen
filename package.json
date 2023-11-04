@@ -1,0 +1,64 @@
+{
+	"name": "@hiogawa/qrcode-rust-wasm-bindgen",
+	"version": "0.0.0",
+	"private": true,
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/hi-ogawa/qrcode-rust-wasm-bindgen"
+	},
+	"license": "MIT",
+	"type": "module",
+	"exports": {
+		".": {
+			"import": "./dist/index.js",
+			"types": "./dist/index.d.js"
+		},
+		"./pkg": {
+			"import": "./pkg/index.js",
+			"types": "./pk/index.d.ts"
+		},
+		"./pkg/index_bg.wasm": {
+			"import": "./pkg/index_bg.wasm"
+		}
+	},
+	"main": "./dist/bundle.js",
+	"types": "./dist/bundle.d.ts",
+	"files": [
+		"pkg/*",
+		"dist/*"
+	],
+	"scripts": {
+		"clean": "rm -rf pkg dist",
+		"build": "pnpm run --seq /^build:/",
+		"build:wasm": "wasm-pack build --target web --out-name index ${BUILD_TYPE:---release}",
+		"build:fix-pkg": "rm -f pkg/package.json pkg/.gitignore pkg/README.md",
+		"build:tsup": "tsup",
+		"tsc": "tsc -b",
+		"dev:tsc": "pnpm tsc --watch --preserveWatchOutput",
+		"test": "vitest",
+		"lint": "pnpm run --seq /^lint:/",
+		"lint-check": "pnpm run --seq /^lint-check:/",
+		"lint:isort": "isort-ts --git --cache --fix",
+		"lint-check:isort": "isort-ts --git --cache",
+		"lint:prettier": "prettier --cache . --write",
+		"lint-check:prettier": "prettier --cache . --check",
+		"release": "pnpm publish --no-git-checks --access public"
+	},
+	"prettier": {
+		"useTabs": true
+	},
+	"devDependencies": {
+		"@hiogawa/isort-ts": "1.1.2-pre.0",
+		"@hiogawa/utils": "1.6.1-pre.9",
+		"@tsconfig/strictest": "^2.0.2",
+		"fast-check": "^3.13.1",
+		"prettier": "^3.0.3",
+		"tsup": "^7.2.0",
+		"typescript": "^5.2.2",
+		"vitest": "^0.34.6",
+		"wasm-pack": "^0.12.1"
+	},
+	"volta": {
+		"node": "20.8.0"
+	}
+}
