@@ -1,6 +1,6 @@
 {
 	"name": "@hiogawa/qrcode-rust-wasm-bindgen",
-	"version": "0.0.0",
+	"version": "0.0.1-pre.0",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/hi-ogawa/qrcode-rust-wasm-bindgen"
