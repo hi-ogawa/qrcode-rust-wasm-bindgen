@@ -11,6 +11,6 @@
 		"module": "ESNext",
 		"target": "ESNext",
 		"lib": ["ESNext", "DOM"],
-		"types": []
+		"types": ["@types/node"]
 	}
 }
